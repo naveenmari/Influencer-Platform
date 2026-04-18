@@ -1,0 +1,220 @@
+.authContainer {
+    --bg-color: #1a1a2e;
+    --accent-color: #00d4ff;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-dim: rgba(255, 255, 255, 0.6);
+
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.backgroundShapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    background: linear-gradient(45deg, var(--accent-color), #0055ff);
+    filter: blur(80px);
+    opacity: 0.15;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.authWrapper {
+    width: 100%;
+    max-width: 900px;
+    min-height: 550px;
+    display: flex;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 212, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.panel {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.formPanel {
+    background: transparent;
+    width: 50%;
+}
+
+.welcomePanel {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(0, 85, 255, 0.05));
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-left: 1px solid var(--glass-border);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    background: linear-gradient(to right, #ffffff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-dim);
+    margin-bottom: 32px;
+    font-size: 1rem;
+}
+
+.inputGroup {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--glass-border);
+    padding: 12px 0;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.input:focus {
+    border-bottom-color: var(--accent-color);
+}
+
+.label {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: var(--text-dim);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input:focus~.label,
+.input:not(:placeholder-shown)~.label {
+    top: -12px;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.input:focus~.underline {
+    width: 100%;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 16px;
+    background: linear-gradient(45deg, var(--accent-color), #0055ff);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.submitBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+}
+
+.submitBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: 0.5s;
+}
+
+.submitBtn:hover::before {
+    left: 100%;
+}
+
+.toggleBtn {
+    margin-top: 24px;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 10px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.toggleBtn:hover {
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+    .authWrapper {
+        flex-direction: column;
+        max-width: 450px;
+        min-height: auto;
+    }
+
+    .formPanel,
+    .welcomePanel {
+        width: 100%;
+    }
+
+    .welcomePanel {
+        order: -1;
+        padding: 30px;
+        border-left: none;
+        border-bottom: 1px solid var(--glass-border);
+    }
+}
