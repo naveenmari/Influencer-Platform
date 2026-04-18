@@ -94,7 +94,7 @@ const EditCampaign = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <div className="card-body p-4">
+                <div className="card-body p-3 p-md-4">
                     <h2 className="mb-4">Edit Campaign</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
@@ -135,9 +135,9 @@ const EditCampaign = () => {
                                 <option value="cancelled">Cancelled</option>
                             </select>
                         </div>
-                        <div className="d-flex justify-content-end gap-2">
-                            <button type="button" className="btn btn-light" onClick={() => navigate(`/campaigns/${id}`)}>Cancel</button>
-                            <button type="submit" className="btn btn-primary" disabled={loading}>
+                        <div className="d-flex flex-column flex-md-row justify-content-end gap-2">
+                            <button type="button" className="btn btn-light w-100 w-md-auto" onClick={() => navigate(`/campaigns/${id}`)}>Cancel</button>
+                            <button type="submit" className="btn btn-primary w-100 w-md-auto" disabled={loading}>
                                 {loading ? 'Saving...' : 'Save Changes'}
                             </button>
                         </div>

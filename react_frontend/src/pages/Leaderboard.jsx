@@ -31,7 +31,7 @@ const Leaderboard = () => {
     if (error) return <div className="container py-5 text-center text-danger">{error}</div>;
 
     return (
-        <div className="container py-5">
+        <div className="container py-4 py-md-5">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

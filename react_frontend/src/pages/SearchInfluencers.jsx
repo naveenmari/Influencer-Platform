@@ -70,7 +70,7 @@ const SearchInfluencers = () => {
                 <div className="row g-4">
                     {/* Filters Sidebar */}
                     <div className="col-lg-3">
-                        <div className="card border-0 shadow-lg p-4" style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', color: 'white' }}>
+                        <div className="card border-0 shadow-lg p-3 p-md-4" style={{ background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', color: 'white' }}>
                             <h4 className="fw-bold mb-4">Smart Filters</h4>
                             <form onSubmit={handleSearch}>
                                 <div className="mb-3">

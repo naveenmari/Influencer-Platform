@@ -92,11 +92,11 @@ const CreateProfile = () => {
         <div className="container py-5 d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
             <motion.div
                 className="card border-0 shadow-lg"
-                style={{ width: '100%', maxWidth: '600px' }}
+                style={{ width: '100%', maxWidth: '600px', borderRadius: '24px' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <div className="card-body p-5">
+                <div className="card-body p-3 p-md-5">
                     <div className="text-center mb-4">
                         <h2 className="fw-bold">Complete Your Profile</h2>
                         <p className="text-secondary">Tell us more about yourself to get started.</p>

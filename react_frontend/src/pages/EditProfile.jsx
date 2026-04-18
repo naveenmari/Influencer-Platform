@@ -95,10 +95,10 @@ const EditProfile = () => {
                     backdropFilter: 'blur(20px)',
                     border: '1px solid rgba(255, 255, 255, 0.05)',
                     borderRadius: '24px',
-                    padding: '2.5rem'
+                    padding: '1.5rem 1rem'
                 }}
             >
-                <div className="d-flex align-items-center mb-5 gap-3">
+                <div className="d-flex flex-column flex-md-row align-items-center mb-4 mb-md-5 gap-3">
                     <button
                         onClick={() => navigate(-1)}
                         className="btn btn-sm text-white-50 p-0 hover-light"
@@ -261,6 +261,11 @@ const EditProfile = () => {
                     .hover-light:hover {
                         color: white !important;
                         opacity: 1;
+                    }
+                    @media (min-width: 768px) {
+                        .edit-profile-card {
+                            padding: 2.5rem !important;
+                        }
                     }
                 `}</style>
             </motion.div>

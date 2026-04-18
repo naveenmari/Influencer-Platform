@@ -141,7 +141,7 @@ const AdminDashboard = () => {
     if (error) {
         return (
             <div className="container py-5 mt-5 text-center">
-                <div className="card border-0 glass-card p-5">
+                <div className="card border-0 glass-card p-3 p-md-5">
                     <FiShield size={64} className="text-danger mb-4 mx-auto" />
                     <h2 className="fw-bold mb-3">Access Denied</h2>
                     <p className="text-muted mb-4">{error}</p>
@@ -152,15 +152,15 @@ const AdminDashboard = () => {
     }
 
     return (
-        <div className="container py-5 mt-5">
+        <div className="container py-4 py-md-5 mt-md-5">
             <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={containerVariants}
                 className="admin-header mb-5"
             >
-                <div className="d-flex align-items-center gap-3 mb-2">
-                    <div className="p-3 rounded-circle bg-primary bg-opacity-10 text-primary overflow-hidden d-flex align-items-center justify-content-center" style={{ width: '64px', height: '64px' }}>
+                <div className="d-flex flex-column flex-md-row align-items-center gap-3 mb-2 text-center text-md-start">
+                    <div className="p-3 rounded-circle bg-primary bg-opacity-10 text-primary overflow-hidden d-flex align-items-center justify-content-center mx-auto mx-md-0" style={{ width: '64px', height: '64px' }}>
                         {authUser?.profile_pic_url ? (
                             <img
                                 src={authUser.profile_pic_url.startsWith('/') ? `${API_URL}${authUser.profile_pic_url}?t=${new Date().getTime()}` : authUser.profile_pic_url}
@@ -173,9 +173,9 @@ const AdminDashboard = () => {
                     </div>
                     <div>
                         <h1 className="fw-bold mb-0">Admin Control Center</h1>
-                        <div className="d-flex align-items-center gap-2 mt-1">
+                        <div className="d-flex flex-column flex-md-row align-items-center gap-md-2 mt-1">
                             <p className="text-muted mb-0">Welcome back, {authUser?.username}</p>
-                            <span className="text-muted">•</span>
+                            <span className="text-muted d-none d-md-inline">•</span>
                             <a href="/edit-profile" className="text-primary small text-decoration-none fw-medium hover-light">Edit Profile</a>
                         </div>
                     </div>
@@ -190,7 +190,7 @@ const AdminDashboard = () => {
                     { id: 'campaigns', label: 'Campaigns', value: stats.campaigns, icon: <FiTrendingUp />, color: '#10b981' },
                     { id: 'verifications', label: 'Verifications Queue', value: verifications.filter(v => v.verification_status === 'unverified').length, icon: <FiShield />, color: '#f59e0b' }
                 ].map((stat, idx) => (
-                    <motion.div key={idx} className="col-md-4 col-xl" variants={itemVariants}>
+                    <motion.div key={idx} className="col-6 col-md-4 col-xl" variants={itemVariants}>
                         <div
                             className="card border-0 glass-card h-100 p-4"
                             onClick={() => setSelectedTab(stat.id)}
@@ -217,7 +217,7 @@ const AdminDashboard = () => {
             {/* Secure Management Section */}
             <motion.div variants={itemVariants} className="card border-0 glass-card overflow-hidden">
                 <div className="card-header border-bottom border-white border-opacity-10 bg-transparent p-4">
-                    <div className="d-flex justify-content-between align-items-center">
+                    <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
                         <h3 className="h5 mb-0 d-flex align-items-center gap-2 text-white text-capitalize">
                             {selectedTab === 'users' && <FiUsers className="text-primary" />}
                             {selectedTab === 'brands' && <FiBriefcase className="text-primary" />}
@@ -236,7 +236,7 @@ const AdminDashboard = () => {
 
                 <div className="card-body p-0">
                     {!isVerified ? (
-                        <div className="p-5 text-center">
+                        <div className="p-3 p-md-5 text-center">
                             <div className="p-4 rounded-circle bg-white bg-opacity-5 d-inline-flex mb-4">
                                 <FiLock size={48} className="text-muted" />
                             </div>

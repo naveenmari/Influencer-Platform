@@ -174,7 +174,7 @@ const CampaignDetails = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="card border-0 shadow-sm"
             >
-                <div className="card-body p-5">
+                <div className="card-body p-3 p-md-5">
                     <div className="d-flex justify-content-between align-items-start mb-4">
                         <div>
                             <h6 className="text-uppercase text-muted small fw-bold mb-2">{campaign.company_name} • {campaign.industry}</h6>
@@ -202,28 +202,28 @@ const CampaignDetails = () => {
                         </div>
                     </div>
 
-                    <div className="d-flex gap-3 border-top pt-4">
-                        <button className="btn btn-outline-secondary px-4" onClick={() => navigate('/dashboard')}>
+                    <div className="d-flex flex-column flex-md-row gap-3 border-top pt-4">
+                        <button className="btn btn-outline-secondary px-4 w-100 w-md-auto" onClick={() => navigate('/dashboard')}>
                             &larr; Back to Dashboard
                         </button>
                         {user?.role === 'influencer' && (
                             <>
-                                <button className="btn btn-primary px-4" onClick={handleApply}>
+                                <button className="btn btn-primary px-4 w-100 w-md-auto" onClick={handleApply}>
                                     Apply Now
                                 </button>
-                                <button className="btn btn-outline-info px-4" onClick={() => setReviewingBrand(true)}>
+                                <button className="btn btn-outline-info px-4 w-100 w-md-auto" onClick={() => setReviewingBrand(true)}>
                                     Rate Brand
                                 </button>
-                                <button className="btn btn-outline-primary px-4" onClick={() => setMessagingUser({ id: campaign.brand_user_id, name: campaign.company_name })}>
+                                <button className="btn btn-outline-primary px-4 w-100 w-md-auto" onClick={() => setMessagingUser({ id: campaign.brand_user_id, name: campaign.company_name })}>
                                     Message Brand
                                 </button>
                                 {campaign.application_status === 'accepted' && (
                                     campaign.payment_status === 'paid' ? (
-                                        <button className="btn btn-secondary px-4" disabled>
+                                        <button className="btn btn-secondary px-4 w-100 w-md-auto" disabled>
                                             Paid
                                         </button>
                                     ) : (
-                                        <button className="btn btn-success px-4" onClick={() => setShowInvoiceModal(true)}>
+                                        <button className="btn btn-success px-4 w-100 w-md-auto" onClick={() => setShowInvoiceModal(true)}>
                                             Bill Brand
                                         </button>
                                     )
@@ -231,11 +231,11 @@ const CampaignDetails = () => {
                             </>
                         )}
                         {user?.id === campaign.brand_user_id && (
-                            <div className="d-flex gap-2">
-                                <Link to={`/campaigns/edit/${id}`} className="btn btn-warning px-4">
+                            <div className="d-flex flex-column flex-md-row gap-2 w-100 w-md-auto">
+                                <Link to={`/campaigns/edit/${id}`} className="btn btn-warning px-4 w-100 w-md-auto">
                                     Edit
                                 </Link>
-                                <button className="btn btn-danger px-4" onClick={handleDelete}>
+                                <button className="btn btn-danger px-4 w-100 w-md-auto" onClick={handleDelete}>
                                     Delete
                                 </button>
                             </div>

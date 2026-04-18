@@ -122,9 +122,9 @@ const TrendAnalysis = () => {
         <div className="container py-5 mt-5">
             {/* Header & Filters */}
             <motion.div initial="hidden" animate="visible" variants={containerVariants} className="mb-5">
-                <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-4 mb-4">
-                    <div className="d-flex align-items-center gap-3">
-                        <div className="p-3 rounded-circle bg-primary bg-opacity-10 text-primary">
+                <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4 mb-4">
+                    <div className="d-flex flex-column flex-md-row align-items-center gap-3 text-center text-md-start">
+                        <div className="p-3 rounded-circle bg-primary bg-opacity-10 text-primary mx-auto mx-md-0">
                             <FiTrendingUp size={32} />
                         </div>
                         <div>

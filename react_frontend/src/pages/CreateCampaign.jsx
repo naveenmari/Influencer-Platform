@@ -57,7 +57,7 @@ const CreateCampaign = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <div className="card-body p-4">
+                <div className="card-body p-3 p-md-4">
                     <h2 className="mb-4">Create New Campaign</h2>
                     {error && <div className="alert alert-danger">{error}</div>}
                     <form onSubmit={handleSubmit}>
@@ -100,9 +100,9 @@ const CreateCampaign = () => {
                                 <input type="date" className="form-control" name="end_date" value={formData.end_date} onChange={handleChange} required />
                             </div>
                         </div>
-                        <div className="d-flex justify-content-end gap-2">
-                            <button type="button" className="btn btn-light" onClick={() => navigate('/dashboard')}>Cancel</button>
-                            <button type="submit" className="btn btn-primary" disabled={loading}>{loading ? 'Creating...' : 'Create Campaign'}</button>
+                        <div className="d-flex flex-column flex-md-row justify-content-end gap-2">
+                            <button type="button" className="btn btn-light w-100 w-md-auto" onClick={() => navigate('/dashboard')}>Cancel</button>
+                            <button type="submit" className="btn btn-primary w-100 w-md-auto" disabled={loading}>{loading ? 'Creating...' : 'Create Campaign'}</button>
                         </div>
                     </form>
                 </div>

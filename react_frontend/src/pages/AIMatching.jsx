@@ -75,7 +75,7 @@ const AIMatching = () => {
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0, y: -20 }}
-                                className="card border-0 shadow-lg p-4"
+                                className="card border-0 shadow-lg p-3 p-md-4"
                                 style={{ backdropFilter: 'blur(20px)', background: 'rgba(30, 30, 30, 0.6)' }}
                             >
                                 <form onSubmit={handleSearch}>
@@ -178,9 +178,9 @@ const AIMatching = () => {
                     transition={{ duration: 0.5 }}
                     className="mt-5"
                 >
-                    <div className="d-flex justify-content-between align-items-center mb-4">
-                        <h3 className="fw-bold">Top AI Recommendations</h3>
-                        <button className="btn btn-outline-secondary btn-sm" onClick={() => setShowResults(false)}>Modify Search</button>
+                    <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-3">
+                        <h3 className="fw-bold mb-0 text-center text-md-start">Top AI Recommendations</h3>
+                        <button className="btn btn-outline-secondary btn-sm w-100 w-md-auto" onClick={() => setShowResults(false)}>Modify Search</button>
                     </div>
 
                     {results.length === 0 ? (

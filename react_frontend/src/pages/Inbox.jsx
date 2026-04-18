@@ -112,12 +112,12 @@ const Inbox = () => {
             <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="row g-4"
-                style={{ height: '75vh' }}
+                className="row g-3 g-md-4"
+                style={{ minHeight: '75vh' }}
             >
                 {/* Contacts List */}
-                <div className="col-md-4">
-                    <div className="card glass-card h-100 border-0 p-3">
+                <div className="col-12 col-md-4">
+                    <div className="card glass-card h-100 border-0 p-3" style={{ maxHeight: '400px' }}>
                         <h4 className="text-white mb-4 d-flex align-items-center gap-2">
                             <FiMessageSquare /> Inbox
                         </h4>
@@ -153,19 +153,19 @@ const Inbox = () => {
                 </div>
 
                 {/* Chat Window */}
-                <div className="col-md-8">
+                <div className="col-12 col-md-8">
                     <div className="card glass-card h-100 border-0 d-flex flex-column">
                         {selectedContact ? (
                             <>
                                 {/* Chat Header */}
-                                <div className="p-4 border-bottom border-white border-opacity-10">
-                                    <h5 className="text-white m-0 d-flex align-items-center gap-2">
+                                <div className="p-3 p-md-4 border-bottom border-white border-opacity-10">
+                                    <h5 className="text-white m-0 d-flex align-items-center gap-2 small fw-bold">
                                         Chat with {selectedContact.username}
                                     </h5>
                                 </div>
                                 
                                 {/* Messages Area */}
-                                <div className="flex-grow-1 p-4 overflow-auto d-flex flex-column gap-3">
+                                <div className="flex-grow-1 p-3 p-md-4 overflow-auto d-flex flex-column gap-3" style={{ minHeight: '300px' }}>
                                     {messages.map(msg => {
                                         const isSender = msg.sender_id === authUser.id;
                                         return (

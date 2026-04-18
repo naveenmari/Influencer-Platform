@@ -113,10 +113,10 @@ const Dashboard = () => {
 
     return (
         <div className="container py-5">
-            <div className="d-flex justify-content-between align-items-center mb-5">
-                <div className="d-flex align-items-center gap-3">
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4 mb-5">
+                <div className="d-flex flex-column flex-md-row align-items-center gap-3">
                     <div
-                        className="rounded-circle bg-dark border border-white-10"
+                        className="rounded-circle bg-dark border border-white-10 mx-auto mx-md-0"
                         style={{ width: '48px', height: '48px', overflow: 'hidden', position: 'relative' }}
                     >
                         {user?.profile_pic_url ? (
@@ -135,16 +135,16 @@ const Dashboard = () => {
                             </div>
                         )}
                     </div>
-                    <div>
+                    <div className="text-center text-md-start">
                         <h1 className="h2 fw-bold mb-0">Dashboard</h1>
-                        <div className="d-flex align-items-center gap-2">
+                        <div className="d-flex flex-column flex-md-row align-items-center gap-md-2">
                             <p className="text-muted mb-0">Welcome back, {user?.username}</p>
                             <Link to="/edit-profile" className="text-primary small text-decoration-none">Edit Profile</Link>
                         </div>
                     </div>
                 </div>
                 {isBrand && (
-                    <Link to="/campaigns/create" className="btn btn-primary">
+                    <Link to="/campaigns/create" className="btn btn-primary w-100 w-md-auto">
                         + Create Campaign
                     </Link>
                 )}
@@ -153,7 +153,7 @@ const Dashboard = () => {
             {/* Stats Overview */}
             <div className="row g-4 mb-5">
                 {data.stats && data.stats.map((stat, i) => (
-                    <div className="col-md-4" key={i}>
+                    <div className="col-6 col-md-4" key={i}>
                         <motion.div
                             className="card dashboard-stat-card h-100"
                             initial={{ opacity: 0, y: 20 }}
@@ -281,7 +281,7 @@ const Dashboard = () => {
                             {(data.campaigns || []).map((campaign) => (
                                 <motion.div className="col-md-12" key={campaign.id} variants={itemVariants}>
                                     <div className="card">
-                                        <div className="card-body d-flex justify-content-between align-items-center">
+                                        <div className="card-body d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center text-md-start">
                                             <div>
                                                 <h5 className="card-title mb-1">{campaign.title}</h5>
                                                 <p className="text-muted small mb-0">
@@ -291,7 +291,7 @@ const Dashboard = () => {
                                                     {isBrand && <> • <span className="badge bg-light text-dark border">{campaign.status}</span></>}
                                                 </p>
                                             </div>
-                                            <Link to={`/campaigns/${campaign.id}`} className="btn btn-outline-primary btn-sm">
+                                            <Link to={`/campaigns/${campaign.id}`} className="btn btn-outline-primary btn-sm w-100 w-md-auto">
                                                 View Details
                                             </Link>
                                         </div>
@@ -313,14 +313,14 @@ const Dashboard = () => {
                                     <motion.div className="col-md-12" key={app.id} variants={itemVariants}>
                                         <Link to={`/campaigns/${app.campaign_id}`} className="text-decoration-none">
                                             <div className="card hover-shadow transition-all border-white-10 bg-dark-soft">
-                                                <div className="card-body d-flex justify-content-between align-items-center">
+                                                <div className="card-body d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-center text-md-start">
                                                     <div>
                                                         <h5 className="card-title mb-1 text-white">{app.campaign_title}</h5>
                                                         <p className="text-muted small mb-0">
                                                             Brand: <span className="text-info">{app.company_name}</span> • Status: <span className="badge bg-info">{app.status}</span>
                                                         </p>
                                                     </div>
-                                                    <div className="btn btn-xs btn-outline-light opacity-50">View Details</div>
+                                                    <div className="btn btn-xs btn-outline-light opacity-50 w-100 w-md-auto">View Details</div>
                                                 </div>
                                             </div>
                                         </Link>

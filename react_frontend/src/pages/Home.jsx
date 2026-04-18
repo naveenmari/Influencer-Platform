@@ -40,9 +40,9 @@ const Home = () => {
                         The minimalist platform for influencers and brands to build meaningful partnerships. Showcase
                         your work, simplified.
                     </motion.p>
-                    <motion.div className="d-flex justify-content-center gap-3" variants={itemVariants}>
-                        <Link to="/register" className="btn btn-primary px-5">Get Started</Link>
-                        <Link to="/login" className="btn btn-outline-primary px-5">Login</Link>
+                    <motion.div className="d-flex flex-column flex-sm-row justify-content-center gap-3" variants={itemVariants}>
+                        <Link to="/register" className="btn btn-primary px-5 w-100 w-sm-auto">Get Started</Link>
+                        <Link to="/login" className="btn btn-outline-primary px-5 w-100 w-sm-auto">Login</Link>
                     </motion.div>
                 </motion.div>
             </div>
