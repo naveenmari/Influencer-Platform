@@ -74,7 +74,7 @@ const ImageUpload = ({ onUploadSuccess, initialImage, userId }) => {
             formData.append('file', croppedImageBlob, 'profile.webp');
             formData.append('user_id', userId);
 
-            const response = await fetch(`${API_URL}/api/upload_profile_pic', {
+            const response = await fetch(`${API_URL}/api/upload_profile_pic`, {
                 method: 'POST',
                 body: formData,
             });

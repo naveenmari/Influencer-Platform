@@ -30,7 +30,7 @@ const CreateCampaign = () => {
         setError('');
 
         try {
-            const response = await fetch(`${API_URL}/api/campaigns', {
+            const response = await fetch(`${API_URL}/api/campaigns`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...formData, user_id: user.id }) // Send user_id 

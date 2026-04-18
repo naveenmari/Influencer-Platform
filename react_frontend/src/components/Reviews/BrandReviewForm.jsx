@@ -21,7 +21,7 @@ const BrandReviewForm = ({ userId, brandId, campaignId, onClose, onSubmitSuccess
         setError(null);
 
         try {
-            const response = await fetch(`${API_URL}/api/brand_reviews', {
+            const response = await fetch(`${API_URL}/api/brand_reviews`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

@@ -75,7 +75,7 @@ const Dashboard = () => {
 
     const handleEditSave = async (platformId) => {
         try {
-            const response = await fetch(`${API_URL}/api/update_platform_details', {
+            const response = await fetch(`${API_URL}/api/update_platform_details`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

@@ -92,7 +92,7 @@ const AdminDashboard = () => {
         e.preventDefault();
         setVerifyError('');
         try {
-            const res = await fetch(`${API_URL}/api/admin/verify', {
+            const res = await fetch(`${API_URL}/api/admin/verify`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

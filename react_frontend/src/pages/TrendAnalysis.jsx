@@ -78,7 +78,7 @@ const TrendAnalysis = () => {
                     if (delRes.ok) fetchBookmarks();
                 }
             } else {
-                const res = await fetch(`${API_URL}/api/trends/bookmarks', {
+                const res = await fetch(`${API_URL}/api/trends/bookmarks`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ user_id: user.id, keyword, platform: filters.platform })

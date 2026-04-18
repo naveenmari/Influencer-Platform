@@ -15,7 +15,7 @@ const AiCaptionWidget = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const res = await fetch(`${API_URL}/api/ai/caption-generator', {
+            const res = await fetch(`${API_URL}/api/ai/caption-generator`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ niche, product, tone })

@@ -26,7 +26,7 @@ const ContentDrafts = ({ campaignId, user, isBrand }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch(`${API_URL}/api/drafts', {
+            const res = await fetch(`${API_URL}/api/drafts`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

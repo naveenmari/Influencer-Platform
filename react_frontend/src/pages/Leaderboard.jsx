@@ -10,7 +10,7 @@ const Leaderboard = () => {
     useEffect(() => {
         const fetchLeaderboard = async () => {
             try {
-                const response = await fetch(`${API_URL}/api/leaderboard');
+                const response = await fetch(`${API_URL}/api/leaderboard`);
                 if (response.ok) {
                     const data = await response.json();
                     setInfluencers(data);

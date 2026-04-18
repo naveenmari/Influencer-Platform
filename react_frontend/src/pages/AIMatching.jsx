@@ -27,7 +27,7 @@ const AIMatching = () => {
         setError('');
 
         try {
-            const response = await fetch(`${API_URL}/api/ai_match', {
+            const response = await fetch(`${API_URL}/api/ai_match`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -56,7 +56,7 @@ const CreateProfile = () => {
         setError('');
 
         try {
-            const response = await fetch(`${API_URL}/api/create_profile', {
+            const response = await fetch(`${API_URL}/api/create_profile`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...formData, user_id: user.id, role: user.role })

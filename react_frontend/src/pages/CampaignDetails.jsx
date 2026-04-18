@@ -25,7 +25,7 @@ const CampaignDetails = () => {
     const handleGenerateInvoice = async (e) => {
         e.preventDefault();
         try {
-             const res = await fetch(`${API_URL}/api/invoices', {
+             const res = await fetch(`${API_URL}/api/invoices`, {
                  method: 'POST',
                  headers: {'Content-Type': 'application/json'},
                  body: JSON.stringify({
@@ -50,7 +50,7 @@ const CampaignDetails = () => {
     const handleSendMessage = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch(`${API_URL}/api/messages', {
+            const res = await fetch(`${API_URL}/api/messages`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
@@ -120,7 +120,7 @@ const CampaignDetails = () => {
 
     const handleApply = async () => {
         try {
-            const response = await fetch(`${API_URL}/api/ad_requests', {
+            const response = await fetch(`${API_URL}/api/ad_requests`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
